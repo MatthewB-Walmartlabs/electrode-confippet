@@ -1,5 +1,6 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'util'.
 const util = require("./util");
 
 function load(config, options) {

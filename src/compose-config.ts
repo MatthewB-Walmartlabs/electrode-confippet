@@ -1,12 +1,17 @@
 "use strict";
 
 const Path = require("path");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'fs'.
 const fs = require("fs");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable '_'.
 const _ = require("lodash");
 const assert = require("assert");
 const defaultOpts = require("./default-compose-opts");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'providerTy... Remove this comment to see the full error message
 const providerTypes = require("./provider-types");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'processCon... Remove this comment to see the full error message
 const processConfig = require("./process-config");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'util'.
 const util = require("./util");
 
 /* eslint-disable max-statements */
@@ -91,6 +96,7 @@ function composeConfigDir(dir, data, options) {
   return data;
 }
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'composeCon... Remove this comment to see the full error message
 function composeConfig(options) {
   options = options || {};
 

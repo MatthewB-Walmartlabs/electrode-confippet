@@ -1,7 +1,11 @@
 "use strict";
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable '_'.
 const _ = require("lodash");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'processCon... Remove this comment to see the full error message
 const processConfig = require("./process-config");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'composeCon... Remove this comment to see the full error message
 const composeConfig = require("./compose-config");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'util'.
 const util = require("./util");
 
 function hideProperties(obj, props) {
@@ -15,6 +19,7 @@ function hideProperties(obj, props) {
 }
 
 class Config {
+  store: any;
   constructor(store) {
     this.store = store;
   }
@@ -50,8 +55,10 @@ function $get(p) {
 function factory() {
   const store = {};
 
+  // @ts-expect-error ts-migrate(2339) FIXME: Property '$' does not exist on type '{}'.
   store.$ = $get;
 
+  // @ts-expect-error ts-migrate(2339) FIXME: Property '_$' does not exist on type '{}'.
   store._$ = new Config(store);
 
   hideProperties(store, ["$", "_$"]);

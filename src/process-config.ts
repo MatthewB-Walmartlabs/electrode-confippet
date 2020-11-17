@@ -1,6 +1,8 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable '_'.
 const _ = require("lodash");
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'fs'.
 const fs = require("fs");
 
 function processObj(obj, data) {
@@ -52,6 +54,7 @@ function processObj(obj, data) {
   });
 }
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'processCon... Remove this comment to see the full error message
 function processConfig(config, options) {
   if (_.isEmpty(config)) {
     return [];
@@ -73,6 +76,7 @@ function processConfig(config, options) {
       }
       throw new Error("config file readFile template missing filename");
     },
+    // @ts-expect-error ts-migrate(7030) FIXME: Not all code paths return a value.
     getEnv: (data) => {
       if (data.params[0]) {
         let value = process.env[data.params[0]];

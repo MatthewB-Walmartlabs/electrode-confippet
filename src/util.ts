@@ -1,7 +1,9 @@
 "use strict";
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable '_'.
 const _ = require("lodash");
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'util'.
 const util = {
   replaceArray: (a, b) => _.isArray(b) && b || undefined,
   merge: function () {
